@@ -1,0 +1,13 @@
+from django.shortcuts import render
+from django.http import HttpResponse
+
+# Create your views here.
+def index(request):
+    return render(request, 'main/index.html', {'title': 'Главная страница!'})
+
+def about(request):
+    return render(request, 'main/about.html', {'title': 'Про сайт!'})
+
+def contact(request):
+    return render(request, 'main/contact.html', {'title': 'Контакты!'})    
+

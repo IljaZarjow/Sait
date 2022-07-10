@@ -1,0 +1,25 @@
+{% extends 'main/win.html' %}
+
+{% block title %}Новости{% endblock %}
+
+{% block content %}
+<div class="features">
+    <h1>Новости!</h1>
+
+    {% if news %}
+
+    {% for el in news %}
+    <div class = 'alert alert-warning'>
+
+    <h3>{{el.title}}</h3>
+    <p>{{el.anons}}</p>
+    <a href="{% url 'www-detail' el.id %}" class="btn btn-warning">Читать полность</a>
+
+    </div>
+    {% endfor %}
+    {% else %}
+    <h1>У вас нет записей!</h1>
+    {% endif %}
+</div>
+
+{% endblock %}
